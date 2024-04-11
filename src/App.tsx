@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css'
 import { GradientCircularProgress } from './components/Loader/GradientCircularProgress';
-import LandingPage from './pages/LandingPage/LandingPage';
+import BasePage from './pages/LandingPage/LandingPage';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,7 +21,7 @@ const App = () => {
       {isLoading ? (
         <GradientCircularProgress />
       ) : (
-        <LandingPage />
+        <BasePage />
       )}
     </div>
   );
