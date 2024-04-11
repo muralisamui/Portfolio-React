@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import './App.css'
 import { GradientCircularProgress } from './components/Loader/GradientCircularProgress';
-import BasePage from './pages/BasePage/BasePage';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/BasePage/Home';
+import Projects from './pages/Projects';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,15 +16,29 @@ const App = () => {
   }, []);
 
   return (
-    <div
-      style={{ width: '100%' }}
-    >
-      {isLoading ? (
-        <GradientCircularProgress />
-      ) : (
-        <BasePage />
-      )}
-    </div>
+    // <div
+    //   style={{ width: '100%' }}
+    // >
+    //   {isLoading ? (
+    //     <GradientCircularProgress />
+    //   ) : (
+    //     <BasePage />
+    //   )}
+    // </div>
+    <Router>
+      <div style={{ width: '100%' }}>
+        {isLoading ? (
+          <GradientCircularProgress />
+        ) : (
+          <Routes>
+            <Route path="/"  element={<Home/>} />
+            <Route path="/projects"  element={<Projects/>} />
+
+            {/* Add more routes here if needed */}
+          </Routes>
+        )}
+      </div>
+    </Router>
   );
 };
 
