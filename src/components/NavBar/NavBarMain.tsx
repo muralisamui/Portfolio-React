@@ -2,6 +2,7 @@ import { Box, IconButton, Tab, Tabs, Typography } from '@mui/material'
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import React, { useState } from 'react'
 import './TabMenuStyles.css'
+import { Link } from 'react-router-dom';
 
 function NavBarMain() {
     const [value, setValue] = useState<string>('Home'); // State to keep track of the selected tab
@@ -12,7 +13,7 @@ function NavBarMain() {
     };
     const [selectedTab, setSelectedTab] = useState<number>(0); // State to keep track of the selected tab
 
-    const handleTabClick = (index:number) => {
+    const handleTabClick = (index: number) => {
         setSelectedTab(index); // Update the selected tab
     };
 
@@ -56,10 +57,10 @@ function NavBarMain() {
             </Typography>
             <Box>
                 <nav>
-                    <a href='#' className={selectedTab === 0 ? 'selected' : ''} onClick={() => handleTabClick(0)}>Home</a>
-                    <a href='#' className={selectedTab === 1 ? 'selected' : ''} onClick={() => handleTabClick(1)}>About Me</a>
-                    <a href='#' className={selectedTab === 2 ? 'selected' : ''} onClick={() => handleTabClick(2)}>Projects</a>
-                    <a href='#' className={selectedTab === 3 ? 'selected' : ''} onClick={() => handleTabClick(3)}>Tools</a>
+                    <Link to='/' className={selectedTab === 0 ? 'selected' : ''} onClick={() => handleTabClick(0)}>Home</Link>
+                    <Link to='/about-me' className={selectedTab === 1 ? 'selected' : ''} onClick={() => handleTabClick(1)}>About Me</Link>
+                    <Link to='/projects' className={selectedTab === 2 ? 'selected' : ''} onClick={() => handleTabClick(2)}>Projects</Link>
+                    <Link to='/tools' className={selectedTab === 3 ? 'selected' : ''} onClick={() => handleTabClick(3)}>Tools</Link>
                     <div className="animation" style={{ left: selectedTab * 100 }}></div>
                 </nav>
             </Box>

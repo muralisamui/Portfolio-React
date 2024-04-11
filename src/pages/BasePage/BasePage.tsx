@@ -1,26 +1,17 @@
 import NavBarMain from '../../components/NavBar/NavBarMain'
 import { Box } from '@mui/material'
 
-function BasePage() {
+interface BasePageProps {
+    title?: string | React.ReactNode;
+    children?: React.ReactNode;
+    className?: string;
+}
+
+const BasePage: React.FC<BasePageProps> = ({ title, children, className }) => {
     return (
-        <Box sx={{ width: '100%', paddingTop:'100px' }}>
-            <NavBarMain/>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint doloremque beatae magnam quis distinctio repellat iure? Aut, aspernatur doloremque itaque necessitatibus magni dignissimos voluptates saepe excepturi expedita. Doloremque, neque itaque?</p>
+        <Box sx={{ width: '100%', paddingTop: '100px' }}>
+            <NavBarMain />
+            {children}
         </Box>
     )
 }
