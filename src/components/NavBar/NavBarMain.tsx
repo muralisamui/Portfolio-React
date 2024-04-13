@@ -1,4 +1,4 @@
-import { Box, IconButton, Tab, Tabs, Typography } from '@mui/material'
+import { Box, Fab, IconButton, Tab, Tabs, Typography } from '@mui/material'
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import React, { useState } from 'react'
 import './TabMenuStyles.css'
@@ -65,10 +65,10 @@ function NavBarMain() {
                 </nav>
             </Box>
             <Box>
-                <IconButton sx={{ color: '#ffffff', border: 'none' }}>
-                    <FileDownloadIcon />
-                    <Typography>Resume</Typography>
-                </IconButton>
+                <Fab variant="extended" sx={{backgroundColor:'#6464643c', color:'#ffffff'}}>
+                    <FileDownloadIcon sx={{ mr: 1 }} />
+                    Resume
+                </Fab>
             </Box>
         </Box>
     )
